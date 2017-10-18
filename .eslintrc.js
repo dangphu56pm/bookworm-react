@@ -19,7 +19,8 @@ module.exports = {
     "linebreak-style": [
       "off",
       "unix"
-    ], 
+    ],
+    "jsx-a11y/label-has-for":"off",
     "jsx-a11y/href-no-hash": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
