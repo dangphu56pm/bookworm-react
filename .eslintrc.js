@@ -1,6 +1,6 @@
 module.exports = {
   "extends": ["airbnb"],
-  "plugins": ["prettier","react","jsx-a11y","import"],
+  "plugins": ["react","jsx-a11y","import"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2016,
@@ -23,6 +23,7 @@ module.exports = {
     "comma-dangle": ["error"],
     "jsx-a11y/label-has-for":"off",
     "jsx-a11y/href-no-hash": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
   }
 }
