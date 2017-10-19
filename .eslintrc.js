@@ -20,6 +20,7 @@ module.exports = {
       "off",
       "unix"
     ],
+    "comma-dangle": ["error"],
     "jsx-a11y/label-has-for":"off",
     "jsx-a11y/href-no-hash": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
