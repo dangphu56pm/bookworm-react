@@ -1,11 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Message, Icon } from 'semantic-ui-react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { confirm } from '../../actions/auth';
 
 class ConfirmationPage extends React.Component {
   state = {
     loading: true,
     success: false,
+  }
+
+  componetDidMount() {
+    this.props.confirm(this.props.match.params.token)
+      .then(() => this.setState({ loading: false, success: true }))
+      .catch(() => this.setState({ loading: false, success: false }));
   }
 
   render() {
@@ -31,4 +40,13 @@ class ConfirmationPage extends React.Component {
   }
 }
 
-export default ConfirmationPage;
+ConfirmationPage.propTypes = {
+  confirm: PropTypes.func.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      token: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
+
+export default connect(null, { confirm })(ConfirmationPage);
