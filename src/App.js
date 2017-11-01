@@ -12,7 +12,7 @@ import GuestRoute from './components/routes/GuestRoute';
 const App = ({ location }) => (
   <div className="ui container">
     <Route location={location} path="/" exact component={HomePage} />
-    <Route location={location} path="/confirmation:token" exact component={ConfirmationPage} />
+    <Route location={location} path="/confirmation/:token" exact component={ConfirmationPage} />
     <GuestRoute location={location} path="/login" component={LoginPage} />
     <GuestRoute location={location} path="/signup" component={SignupPage} />
     <UserRoute location={location} path="/dashboard" component={DashboardPage} />
